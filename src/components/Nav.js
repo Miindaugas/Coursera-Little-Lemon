@@ -1,3 +1,3 @@
 export const Nav = () => {
-    return <footer></footer>
+    return <nav>Navigation</nav>
 }

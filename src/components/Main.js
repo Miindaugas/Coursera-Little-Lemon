@@ -1,3 +1,3 @@
 export const Main = () => {
-    return <footer></footer>
+    return <main>Main</main>
 }
