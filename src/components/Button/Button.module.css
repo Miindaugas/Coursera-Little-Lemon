@@ -1,0 +1,23 @@
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--highlight2);
+    background-color: var(--primary2);
+    border: none;
+    font-family: var(--karla), sans-serif;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background-color: var(--secondary);
+}
+
+.button:active {
+    background-color: var(--secondary2);
+}

@@ -1,0 +1,109 @@
+import { Button } from '../Button/Button'
+import { useEffect, useReducer } from 'react'
+
+function formReducer(state, action) {
+  switch (action.type) {
+    case 'UPDATE_FIELD':
+      return {
+        ...state,
+        [action.field]: action.value,
+      }
+    default:
+      return []
+  }
+}
+
+export const BookingForm = (props) => {
+  const { initialState = {}, initializeTimes = (_) => {}, onSubmit } = props
+
+  const [formState, updateFormState] = useReducer(formReducer, initialState)
+
+  const handleChange = (field) => (e) => {
+    updateFormState({
+      type: 'UPDATE_FIELD',
+      field,
+      value: e.target.value,
+    })
+  }
+
+  const handleTimeChange = (date) => {
+    updateFormState({
+      type: 'UPDATE_FIELD',
+      field: 'times',
+      value: initializeTimes(date),
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    onSubmit(formState)
+  }
+
+  useEffect(() => {
+    if (formState.date) {
+      handleTimeChange(formState.date)
+    }
+  }, [formState.date])
+
+  return (
+    <>
+      <p>Table Reservation</p>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="date">Date:</label>
+          <input
+            id="date"
+            type="date"
+            min={new Date().toISOString().split('T')[0]}
+            value={formState.date || ''}
+            onChange={handleChange('date')}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="time">Time:</label>
+          <select
+            id="time"
+            value={formState.time || ''}
+            onChange={handleChange('time')}
+            required
+          >
+            <option value="">Select Time</option>
+            {formState.times?.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label htmlFor="guests">Number of guests</label>
+          <input
+            value={formState.guests || ''}
+            onChange={handleChange('guests')}
+            type="number"
+            placeholder="Maximum geusts 10"
+            min="1"
+            max="10"
+            id="guests"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="occasion">Occasion</label>
+          <select
+            id="occasion"
+            value={formState.occasion || ''}
+            onChange={handleChange('occasion')}
+            required
+          >
+            <option value="">Select Occasion</option>
+            <option value="birthday">Birthday</option>
+            <option value="aniversary">Anniversary</option>
+          </select>
+        </div>
+        <Button type="submit">Make Your reservation</Button>
+      </form>
+    </>
+  )
+}

@@ -1,3 +1,42 @@
-.specials {
-  background-color: #61dafb;
+.testimonials {
+    width: 100%;
+    text-align: center;
+    padding: 6rem 2rem;
+    color: #ffffff;
+    background-color: var(--primary);
+}
+
+.testimonials h2 {
+    font-family: var(--markazi), sans-serif;
+    font-size: 3.33em;
+    font-weight: 400;
+}
+
+.testimonials p {
+    font-family: var(--markazi), sans-serif;
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    font-family: var(--karla), sans-serif;
+    font-size: 1em;
+    color: #000000;
+    max-width: 1200px;
+    display: grid;
+    margin: auto;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid span {
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(0, 400px));
+    }
 }

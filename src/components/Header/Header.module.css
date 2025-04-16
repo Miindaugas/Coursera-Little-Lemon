@@ -1,8 +1,14 @@
 .header {
   display: flex;
-  max-width: 860px;
-  margin: auto;
-  background: green;
+  justify-content: center;
+  padding: 1rem;
+  gap: 2.5rem;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--highlight);
 }
 
 .navigation {
@@ -13,6 +19,18 @@
 .navigation > ul {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 1.75rem;
   list-style: none;
+  text-transform: uppercase;
+}
+
+.navigation a {
+  font-family: 'Karla', sans-serif;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--highlight2);
+}
+
+.navigation a:hover {
+  color: var(--secondary);
 }

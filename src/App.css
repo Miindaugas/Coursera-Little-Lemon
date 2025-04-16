@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Karla';
+  src: url('../public/fonts/Karla/Karla-VariableFont_wght.ttf')
+    format('truetype');
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Markazi Text';
+  src: url('../public/fonts/Markazi_Text/MarkaziText-VariableFont_wght.ttf')
+    format('truetype');
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --primary: #495e57;
+  --primary2: #f4ce14;
+  --secondary: #ee9972;
+  --secondary2: #fbdabb;
+  --highlight: #edefee;
+  --highlight2: #333333;
+  --rounded-corners: 16px;
+  --breakpoint: 1200px;
+  --karla: 'Karla';
+  --markazi: 'Markazi Text';
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html,
+body {
+  font-family: 'Markazi Text', serif;
+  color: #000000;
+  background-color: #ffffff;
+  line-height: 1.5;
 }

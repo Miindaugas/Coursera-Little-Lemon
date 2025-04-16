@@ -1,0 +1,24 @@
+.avatar {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+.avatar img {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+}
+
+.avatar > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.avatar blockquote {
+    display: block;
+    font-style: italic;
+    font-size: 1.2rem;
+}

@@ -1,16 +1,23 @@
 import styles from './Hero.module.css'
+import { Button } from '../Button/Button'
+import { useNavigate } from 'react-router-dom'
 
 export const Hero = () => {
+  const navigate = useNavigate()
   return (
-    <div className={styles.hero}>
-      <div>Little Lemon</div>
-      <div>Chicago</div>
+    <section id="home" className={styles.hero}>
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        <h1>Little Lemon</h1>
+        <h2>Chicago</h2>
+        <p>
+          We are a family owned Mediterranean restaurant, focused on traditional
+          recipes served with a modern twist.
+        </p>
+        <Button onClick={() => navigate('booking')}>Book a Table</Button>
       </div>
-      <button>Reserve Table</button>
-      <img src="/asset/restauranfood.jpg" alt="" width={375} height={325} />
-    </div>
+      <div>
+        <img src="/asset/restauranfood.jpg" alt="Little Lemon food" />
+      </div>
+    </section>
   )
 }

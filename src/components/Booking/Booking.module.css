@@ -1,0 +1,75 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.main nav {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+
+.main nav button {
+    padding: 1rem;
+    gap: 0;
+}
+
+.main nav button:hover {
+    gap: 1rem;
+}
+
+.main nav button:hover span {
+    width: auto;
+}
+
+.main nav span {
+    width: 0;
+    overflow: hidden;
+}
+
+.main h1 {
+    font-size: 3.3em;
+    font-weight: 500;
+    color: var(--primary2);
+}
+
+.main p {
+    font-family: var(--karla), sans-serif;
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--highlight);
+}
+
+.main form {
+    display: flex;
+    width: 400px;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.main label, .main input, .main select {
+    display: block;
+    width: 100%;
+}
+
+.main label {
+    font-family: var(--karla), sans-serif;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--highlight);
+}
+
+.main input, .main select {
+    font-family: var(--karla), sans-serif;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0.75rem 0.5rem;
+    border-radius: var(--rounded-corners);
+    border: none;
+}

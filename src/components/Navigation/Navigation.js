@@ -1,20 +1,16 @@
-import { Link } from 'react-router-dom'
-
 export const Navigation = () => {
   const links = [
-    { text: 'Home', to: '/' },
-    { text: 'About', to: '/about' },
-    { text: 'Menu', to: '/menu' },
-    { text: 'Reservations', to: '/reservations' },
-    { text: 'Order Online', to: '/order-online' },
-    { text: 'Login', to: '/login' },
+    { text: 'About', to: '#about' },
+    { text: 'Menu', to: '#specials' },
+    { text: 'Testimonials', to: '#testimonials' },
+    { text: 'Contact', to: '#contact' },
   ]
 
   return (
     <ul>
       {links.map((link, index) => (
         <li key={index}>
-          <Link to={link.to}>{link.text}</Link>
+          <a href={link.to}>{link.text}</a>
         </li>
       ))}
     </ul>
