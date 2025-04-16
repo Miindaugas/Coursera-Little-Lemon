@@ -1,11 +1,7 @@
 import styles from './ConfirmedBooking.module.css'
-import { Button } from '../Button/Button'
-import { useNavigate } from 'react-router-dom'
 import { useMemo } from 'react'
 
 export const ConfirmedBooking = () => {
-  const navigate = useNavigate()
-
   const booking = useMemo(() => {
     try {
       return JSON.parse(localStorage.getItem('Bookings'))
@@ -27,7 +23,6 @@ export const ConfirmedBooking = () => {
           ))}
         </ul>
       )}
-      <Button onClick={() => navigate('/')}>Go Home</Button>
     </main>
   )
 }

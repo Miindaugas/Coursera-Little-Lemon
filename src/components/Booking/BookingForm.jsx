@@ -19,14 +19,7 @@ function formReducer(state, action) {
 export const BookingForm = (props) => {
   const { initialState = {}, initializeTimes = (_) => {}, onSubmit } = props
 
-  const [formState, updateFormState] = useReducer(
-    formReducer,
-    initialState,
-    () =>
-      localStorage.getItem('Bookings')
-        ? JSON.parse(localStorage.getItem('Bookings'))
-        : initialState
-  )
+  const [formState, updateFormState] = useReducer(formReducer, initialState)
 
   const handleChange = (field) => (e) => {
     updateFormState({

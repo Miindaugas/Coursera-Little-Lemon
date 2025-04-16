@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { BookingForm } from './components/Booking/BookingForm'
+import { ConfirmedBooking } from './components/ConfirmedBooking/ConfirmedBooking'
 
 test('Renders the Booking heading', () => {
   render(<BookingForm />)
@@ -57,6 +58,6 @@ test('Should write to local storage', () => {
 
 test('Should read from localStorage Bookings on load', () => {
   jest.spyOn(Storage.prototype, 'getItem')
-  render(<BookingForm />)
+  render(<ConfirmedBooking />)
   expect(localStorage.getItem).toHaveBeenCalledWith('Bookings')
 })
