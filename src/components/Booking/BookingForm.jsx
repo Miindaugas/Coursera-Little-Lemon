@@ -4,19 +4,29 @@ import { useEffect, useReducer } from 'react'
 function formReducer(state, action) {
   switch (action.type) {
     case 'UPDATE_FIELD':
-      return {
+      const newState = {
         ...state,
         [action.field]: action.value,
       }
+      const { times, ...rest } = newState
+      localStorage.setItem('Bookings', JSON.stringify(rest))
+      return newState
     default:
-      return []
+      return state
   }
 }
 
 export const BookingForm = (props) => {
   const { initialState = {}, initializeTimes = (_) => {}, onSubmit } = props
 
-  const [formState, updateFormState] = useReducer(formReducer, initialState)
+  const [formState, updateFormState] = useReducer(
+    formReducer,
+    initialState,
+    () =>
+      localStorage.getItem('Bookings')
+        ? JSON.parse(localStorage.getItem('Bookings'))
+        : initialState
+  )
 
   const handleChange = (field) => (e) => {
     updateFormState({
@@ -36,7 +46,8 @@ export const BookingForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    onSubmit(formState)
+    const { times, ...rest } = formState
+    onSubmit({ ...rest })
   }
 
   useEffect(() => {
@@ -102,7 +113,7 @@ export const BookingForm = (props) => {
             <option value="aniversary">Anniversary</option>
           </select>
         </div>
-        <Button type="submit">Make Your reservation</Button>
+        <Button type="submit">Make Reservation</Button>
       </form>
     </>
   )

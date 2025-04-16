@@ -3,8 +3,25 @@ import { Button } from '../Button/Button'
 import { useNavigate } from 'react-router-dom'
 import { BookingForm } from './BookingForm'
 
-export const Booking = (props) => {
+export const Booking = () => {
   const navigate = useNavigate()
+
+  const initialState = {
+    date: null,
+    time: null,
+    guests: null,
+    occasion: null,
+  }
+
+  const initializeTimes = (date) => {
+    return window.fetchAPI(new Date(date))
+  }
+
+  const onSubmit = (data) => {
+    if (window.submitAPI(data)) {
+      navigate('/confirmed')
+    }
+  }
 
   return (
     <main className={styles.main}>
@@ -15,7 +32,11 @@ export const Booking = (props) => {
         </Button>
       </nav>
       <h1>Little Lemon</h1>
-      <BookingForm {...props} />
+      <BookingForm
+        initialState={initialState}
+        initializeTimes={initializeTimes}
+        onSubmit={onSubmit}
+      />
     </main>
   )
 }

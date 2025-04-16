@@ -32,3 +32,31 @@ test('Should have time select when date selected', () => {
   expect(option).toHaveValue('19:00')
   expect(initializeTimes).toHaveBeenCalledTimes(1)
 })
+
+test('Should write to local storage', () => {
+  const initialState = {}
+  const initializeTimes = () => []
+
+  jest.spyOn(Storage.prototype, 'setItem')
+
+  render(
+    <BookingForm
+      initialState={initialState}
+      initializeTimes={initializeTimes}
+    />
+  )
+
+  const date = screen.getByLabelText('Date:')
+  fireEvent.change(date, { target: { value: '2030-04-18' } })
+
+  expect(localStorage.setItem).toHaveBeenCalledWith(
+    'Bookings',
+    JSON.stringify({ date: '2030-04-18' })
+  )
+})
+
+test('Should read from localStorage Bookings on load', () => {
+  jest.spyOn(Storage.prototype, 'getItem')
+  render(<BookingForm />)
+  expect(localStorage.getItem).toHaveBeenCalledWith('Bookings')
+})
