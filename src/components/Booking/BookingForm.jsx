@@ -48,7 +48,6 @@ export const BookingForm = (props) => {
       const inputDate = new Date(date)
       const today = new Date()
       today.setHours(0, 0, 0, 0)
-
       return inputDate >= today
     }
 
@@ -128,7 +127,7 @@ export const BookingForm = (props) => {
           </select>
         </div>
         <div>
-          <label htmlFor="guests">Number of guests</label>
+          <label htmlFor="guests">Number of guests:</label>
           <input
             value={formState.guests || ''}
             onChange={handleChange('guests')}
@@ -141,7 +140,7 @@ export const BookingForm = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="occasion">Occasion</label>
+          <label htmlFor="occasion">Occasion:</label>
           <select
             id="occasion"
             value={formState.occasion || ''}
