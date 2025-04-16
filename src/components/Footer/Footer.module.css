@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation > ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}

@@ -1,18 +1,32 @@
-import './App.css';
-import {Header} from "./components/Header";
-import {Footer} from "./components/Footer";
-import {Main} from "./components/Main";
-import {Nav} from "./components/Nav";
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Header } from './components/Header/Header'
+import { Hero } from './components/Hero/Hero'
+import { Specials } from './components/Specials/Specials'
+import { Testimonials } from './components/Testimonials/Testimonials'
+import { Footer } from './components/Footer/Footer'
 
 function App() {
-    return (
-        <div className="App">
-            <Header></Header>
-            <Nav></Nav>
-            <Main></Main>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Specials />
+                <Testimonials />
+              </>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
