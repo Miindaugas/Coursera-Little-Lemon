@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   background-color: var(--highlight);
+  box-shadow: 0 1px 2px 0 var(--primary2);
 }
 
 .navigation {
@@ -31,6 +32,43 @@
   color: var(--highlight2);
 }
 
+.burger {
+  display: none;
+}
+
 .navigation a:hover {
   color: var(--secondary);
+}
+
+@media (max-width: 1200px) {
+  .burger {
+    display: block;
+    border: none;
+    cursor: pointer;
+  }
+
+  .navigation {
+    display: none;
+    position: fixed;
+    padding: 4rem;
+    top: 20%;
+    height: 80%;
+    right: 0;
+    border-top-left-radius: 2rem;
+    border-left: solid 1rem var(--primary2);
+    background-color: var(--highlight2);
+  }
+
+  .navigation[data-open="true"] {
+    display: block;
+  }
+
+  .navigation ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navigation ul li a {
+    color: #ffffff;
+  }
 }

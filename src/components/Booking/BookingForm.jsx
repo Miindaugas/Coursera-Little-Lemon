@@ -1,5 +1,6 @@
+import styles from './Booking.module.css'
 import { Button } from '../Button/Button'
-import { useEffect, useReducer } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 
 function formReducer(state, action) {
   switch (action.type) {
@@ -20,8 +21,10 @@ export const BookingForm = (props) => {
   const { initialState = {}, initializeTimes = (_) => {}, onSubmit } = props
 
   const [formState, updateFormState] = useReducer(formReducer, initialState)
+  const [error, updateError] = useState(null)
 
   const handleChange = (field) => (e) => {
+    updateError(null)
     updateFormState({
       type: 'UPDATE_FIELD',
       field,
@@ -40,6 +43,50 @@ export const BookingForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const { times, ...rest } = formState
+
+    const isValidDate = (date) => {
+      const inputDate = new Date(date)
+      const today = new Date()
+      today.setHours(0, 0, 0, 0)
+
+      return inputDate >= today
+    }
+
+    const isValidGuests = (number) => {
+      const guests = parseInt(number, 10)
+      return Number.isInteger(guests) && guests >= 1 && guests <= 10
+    }
+
+    function isValidTime(time) {
+      const [_, minute] = time.split(':').map(Number)
+      return minute === 0 || minute === 30
+    }
+
+    const isValidOccasion = (value) => {
+      const allowed = ['birthday', 'anniversary']
+      return allowed.includes(value)
+    }
+
+    if (!isValidDate(rest.date)) {
+      updateError(`Invalid date: ${rest.date}`)
+      return
+    }
+
+    if (!isValidTime(rest.time)) {
+      updateError(`Invalid time: ${rest.time}`)
+      return
+    }
+
+    if (!isValidGuests(rest.guests)) {
+      updateError(`Invalid guests: ${rest.guests}`)
+      return
+    }
+
+    if (!isValidOccasion(rest.occasion)) {
+      updateError(`Invalid occasion: ${rest.occasion}`)
+      return
+    }
+
     onSubmit({ ...rest })
   }
 
@@ -103,9 +150,10 @@ export const BookingForm = (props) => {
           >
             <option value="">Select Occasion</option>
             <option value="birthday">Birthday</option>
-            <option value="aniversary">Anniversary</option>
+            <option value="anniversary">Anniversary</option>
           </select>
         </div>
+        {error && <span className={styles.error}>{error}</span>}
         <Button type="submit">Make Reservation</Button>
       </form>
     </>
