@@ -57,7 +57,7 @@ export const BookingForm = (props) => {
     }
 
     function isValidTime(time) {
-      const [_, minute] = time.split(':').map(Number)
+      const [, minute] = time.split(':').map(Number)
       return minute === 0 || minute === 30
     }
 
@@ -93,7 +93,7 @@ export const BookingForm = (props) => {
     if (formState.date) {
       handleTimeChange(formState.date)
     }
-  }, [formState.date])
+  }, [formState.date, handleTimeChange])
 
   return (
     <>

@@ -42,7 +42,7 @@ export const Specials = () => {
               <span>$ {price.toFixed(2)}</span>
             </div>
             <p className={styles.description}>{description}</p>
-            <a className={styles.order} href="#">
+            <a className={styles.order}>
               Order delivery
               <svg
                 aria-hidden="true"
