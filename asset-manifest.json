@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/Coursera-Little-Lemon/static/css/main.10b02f7e.css",
+    "main.css": "/Coursera-Little-Lemon/static/css/main.408ce947.css",
     "main.js": "/Coursera-Little-Lemon/static/js/main.487436fb.js",
     "static/js/453.99c1801e.chunk.js": "/Coursera-Little-Lemon/static/js/453.99c1801e.chunk.js",
-    "static/media/MarkaziText-VariableFont_wght.ttf": "/Coursera-Little-Lemon/static/media/MarkaziText-VariableFont_wght.e632ba8943cfbba3a806.ttf",
-    "static/media/Karla-VariableFont_wght.ttf": "/Coursera-Little-Lemon/static/media/Karla-VariableFont_wght.1d835e644ae4118a28fc.ttf",
     "index.html": "/Coursera-Little-Lemon/index.html",
-    "main.10b02f7e.css.map": "/Coursera-Little-Lemon/static/css/main.10b02f7e.css.map",
+    "main.408ce947.css.map": "/Coursera-Little-Lemon/static/css/main.408ce947.css.map",
     "main.487436fb.js.map": "/Coursera-Little-Lemon/static/js/main.487436fb.js.map",
     "453.99c1801e.chunk.js.map": "/Coursera-Little-Lemon/static/js/453.99c1801e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.10b02f7e.css",
+    "static/css/main.408ce947.css",
     "static/js/main.487436fb.js"
   ]
 }
