@@ -2,7 +2,7 @@
   "name": "little-lemon",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://miindaugas.github.io/coursera-little-lemon",
+  "homepage": "https://miindaugas.github.io/Coursera-Little-Lemon",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
