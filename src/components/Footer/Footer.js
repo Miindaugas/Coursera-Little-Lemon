@@ -6,7 +6,10 @@ export const Footer = () => {
     <section id="contact" className={styles.footer}>
       <footer>
         <div>
-          <img src="/asset/restaurant.jpg" alt="Little Lemon Logo" />
+          <img
+            src={`${process.env.PUBLIC_URL}/asset/restaurant.jpg`}
+            alt="Little Lemon Logo"
+          />
         </div>
         <div>
           <h2>Little Lemon</h2>

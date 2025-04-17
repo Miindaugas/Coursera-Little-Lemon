@@ -15,10 +15,16 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <a href="#home">
-        <img src="/asset/logo.svg" alt="Little Lemon Home" />
+        <img
+          src={`${process.env.PUBLIC_URL}/asset/Logo.svg`}
+          alt="Little Lemon Home"
+        />
       </a>
       <button className={styles.burger} onClick={(e) => setOpen(!open)}>
-        <img src="/asset/🦆%20icon%20_hamburger%20menu.svg" alt="Open Menu" />
+        <img
+          src={`${process.env.PUBLIC_URL}/asset/🦆%20icon%20_hamburger%20menu.svg`}
+          alt="Open Menu"
+        />
       </button>
       <nav className={styles.navigation} data-open={open}>
         <Navigation />

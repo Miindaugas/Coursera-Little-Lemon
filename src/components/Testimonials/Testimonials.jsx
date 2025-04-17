@@ -39,10 +39,17 @@ export const Testimonials = () => {
             {Array(rating)
               .fill()
               .map((_, index) => (
-                <img key={index} src="/asset/star.svg" alt="star" />
+                <img
+                  key={index}
+                  src={`${process.env.PUBLIC_URL}/asset/star.svg`}
+                  alt="star"
+                />
               ))}
             <div>
-              <img src="/asset/avatar.png" alt={name} />
+              <img
+                src={`${process.env.PUBLIC_URL}/asset/avatar.png`}
+                alt={name}
+              />
               <span>{name}</span>
             </div>
             <blockquote>{quote}</blockquote>

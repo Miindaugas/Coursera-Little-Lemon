@@ -11,7 +11,7 @@ import { ConfirmedBooking } from './components/ConfirmedBooking/ConfirmedBooking
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Routes>
           <Route

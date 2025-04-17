@@ -27,7 +27,10 @@ export const Booking = () => {
     <main className={styles.main}>
       <nav>
         <Button onClick={() => navigate('/')}>
-          <img src="/asset/home%20icon.svg" alt="Home" />
+          <img
+            src={`${process.env.PUBLIC_URL}/asset/home%20icon.svg`}
+            alt="Home"
+          />
           <span>Home</span>
         </Button>
       </nav>

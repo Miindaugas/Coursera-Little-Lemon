@@ -16,7 +16,10 @@ export const Hero = () => {
         <Button onClick={() => navigate('booking')}>Book a Table</Button>
       </div>
       <div>
-        <img src="/asset/restauranfood.jpg" alt="Little Lemon food" />
+        <img
+          src={`${process.env.PUBLIC_URL}/asset/restauranfood.jpg`}
+          alt="Little Lemon food"
+        />
       </div>
     </section>
   )

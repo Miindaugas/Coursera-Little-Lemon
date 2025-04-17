@@ -20,12 +20,12 @@ export const About = () => {
       </div>
       <div className={styles.gallery}>
         <img
-          src="/asset/Mario%20and%20Adrian%20A.jpg"
+          src={`${process.env.PUBLIC_URL}/asset/Mario%20and%20Adrian%20A.jpg`}
           alt="Mario and Adrian"
           width="270px"
         />
         <img
-          src="/asset/Mario%20and%20Adrian%20b.jpg"
+          src={`${process.env.PUBLIC_URL}/asset/Mario%20and%20Adrian%20b.jpg`}
           alt="Mario and Adrian"
           width="270px"
         />
