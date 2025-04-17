@@ -18,9 +18,7 @@ export const Booking = () => {
   }
 
   const onSubmit = (data) => {
-    if (window.submitAPI(data)) {
-      navigate('/confirmed')
-    }
+    navigate('/confirmed')
   }
 
   return (

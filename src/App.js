@@ -14,8 +14,10 @@ function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Routes>
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
+          <Route path="/booking" element={<Booking />} />
           <Route
-            path="/"
+            path="*"
             element={
               <>
                 <Header />
@@ -27,8 +29,6 @@ function App() {
               </>
             }
           />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/confirmed" element={<ConfirmedBooking />} />
         </Routes>
       </div>
     </BrowserRouter>
