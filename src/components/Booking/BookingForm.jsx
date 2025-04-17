@@ -42,6 +42,8 @@ export const BookingForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    e.stopPropagation()
+
     const { times, ...rest } = formState
 
     const isValidDate = (date) => {
@@ -93,7 +95,7 @@ export const BookingForm = (props) => {
     if (formState.date) {
       handleTimeChange(formState.date)
     }
-  }, [formState.date, handleTimeChange])
+  }, [formState.date])
 
   return (
     <>
