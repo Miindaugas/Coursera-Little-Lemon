@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/coursera-little-lemon/static/css/main.750fb5f8.css",
+    "main.js": "/coursera-little-lemon/static/js/main.6874d5d9.js",
+    "static/js/453.99c1801e.chunk.js": "/coursera-little-lemon/static/js/453.99c1801e.chunk.js",
+    "static/media/MarkaziText-VariableFont_wght.ttf": "/coursera-little-lemon/static/media/MarkaziText-VariableFont_wght.e632ba8943cfbba3a806.ttf",
+    "static/media/Karla-VariableFont_wght.ttf": "/coursera-little-lemon/static/media/Karla-VariableFont_wght.1d835e644ae4118a28fc.ttf",
+    "index.html": "/coursera-little-lemon/index.html",
+    "main.750fb5f8.css.map": "/coursera-little-lemon/static/css/main.750fb5f8.css.map",
+    "main.6874d5d9.js.map": "/coursera-little-lemon/static/js/main.6874d5d9.js.map",
+    "453.99c1801e.chunk.js.map": "/coursera-little-lemon/static/js/453.99c1801e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.750fb5f8.css",
+    "static/js/main.6874d5d9.js"
+  ]
+}
