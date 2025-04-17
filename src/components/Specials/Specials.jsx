@@ -15,7 +15,7 @@ export const Specials = () => {
       name: 'Bruschetta',
       description:
         'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive.',
-      image: `${process.env.PUBLIC_URL}/asset/bruchetta.svg`,
+      image: `${process.env.PUBLIC_URL}/asset/bruchetta.png`,
       price: 5.99,
     },
     {
